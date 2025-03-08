@@ -1,0 +1,10 @@
+O que é NPM?
+NPM (Node Package Manager) é o gerenciador de pacotes padrão do Node.js. Ele permite instalar, compartilhar e gerenciar dependências (bibliotecas e ferramentas) em projetos JavaScript.
+
+Principais funcionalidades:
+Instalação de pacotes: Baixa e instala bibliotecas de terceiros.
+
+Gerenciamento de dependências: Mantém um registro das bibliotecas usadas no projeto.
+
+Execução de scripts: Permite rodar tarefas automatizadas (como testes ou builds).
+

@@ -1,0 +1,13 @@
+Como Instalar Node.js e NPM
+
+Acesse o site oficial do Node.js: nodejs.org.
+
+Baixe e instale a versão LTS (Long Term Support), que é mais estável.
+
+Após a instalação, verifique se o Node.js e o NPM estão instalados corretamente:
+
+
+node -v
+npm -v
+
+Isso exibirá as versões instaladas.

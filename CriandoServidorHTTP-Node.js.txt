@@ -1,0 +1,63 @@
+2. Criando um Servidor HTTP com Node.js
+Vamos criar um servidor HTTP simples usando o módulo http do Node.js.
+
+Crie um arquivo server.js:
+
+javascript
+Copy
+// Importa o módulo http
+const http = require('http');
+
+// Cria um servidor HTTP
+const server = http.createServer((req, res) => {
+  res.statusCode = 200; // Código de status HTTP (OK)
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Olá, mundo!\n');
+});
+
+// Define a porta e o host
+const port = 3000;
+const host = 'localhost';
+
+// Inicia o servidor
+server.listen(port, host, () => {
+  console.log(`Servidor rodando em http://${host}:${port}/`);
+});
+Execute o servidor:
+
+
+node server.js
+Acesse http://localhost:3000 no navegador. Você verá a mensagem "Olá, mundo!".
+
+3. Usando NPM para Gerenciar Scripts
+O package.json permite definir scripts personalizados para automatizar tarefas.
+
+No package.json, adicione um script para rodar o servidor:
+
+json
+Copy
+{
+  "scripts": {
+    "start": "node server.js"
+  }
+}
+Agora, você pode rodar o servidor com:
+
+
+npm start
+4. Instalando Dependências de Desenvolvimento
+Algumas bibliotecas são usadas apenas durante o desenvolvimento (como ferramentas de teste ou linting). Você pode instalá-las como dependências de desenvolvimento.
+
+Instale o eslint (uma ferramenta de linting):
+
+
+npm install eslint --save-dev
+No package.json, a dependência será listada em devDependencies:
+
+json
+Copy
+{
+  "devDependencies": {
+    "eslint": "^8.0.0"
+  }
+}

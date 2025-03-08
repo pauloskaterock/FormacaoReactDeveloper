@@ -1,0 +1,9 @@
+O que é Node.js?
+Node.js é um ambiente de execução JavaScript que permite rodar código JavaScript no servidor (fora do navegador). Ele é construído sobre o motor V8 do Google Chrome e é amplamente usado para criar aplicações web escaláveis e de alta performance.
+
+Principais características:
+Assíncrono e orientado a eventos: Ideal para operações I/O (entrada/saída) não bloqueantes.
+
+Single-threaded: Usa um único thread para lidar com várias conexões simultaneamente.
+
+Ecossistema rico: Graças ao NPM, há milhares de bibliotecas disponíveis.

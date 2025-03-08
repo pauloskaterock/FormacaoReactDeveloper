@@ -1,0 +1,35 @@
+Exemplos Práticos
+1. Criando um Projeto com Node.js e NPM
+Vamos criar um projeto simples que usa Node.js e NPM.
+
+Crie uma pasta para o projeto:
+
+
+mkdir meu-projeto
+cd meu-projeto
+Inicialize o projeto com NPM:
+
+
+npm init -y
+Isso cria um arquivo package.json, que armazena as configurações e dependências do projeto.
+
+Instale uma biblioteca (por exemplo, lodash, uma biblioteca utilitária):
+
+
+npm install lodash
+Crie um arquivo index.js e use a biblioteca instalada:
+
+javascript
+Copy
+// Importa a biblioteca lodash
+const _ = require('lodash');
+
+// Exemplo de uso: capitaliza a primeira letra de uma string
+const nome = "paulo";
+const nomeCapitalizado = _.capitalize(nome);
+
+console.log(nomeCapitalizado); // Saída: "Paulo"
+Execute o script:
+
+
+node index.js
