@@ -115,9 +115,8 @@ Exemplo Prático
 Vamos criar um app simples e usar o React DevTools para inspecioná-lo.
 
 Passo 1: Criar o Projeto
-bash
-Copy
-yarn create react-app meu-app-react
+
+yarn create react-app meu-app-react-dev-tools-teste
 cd meu-app-react
 yarn start
 Passo 2: Modificar o App.js
