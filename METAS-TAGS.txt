@@ -1,0 +1,94 @@
+📌 O que são Meta Tags?
+As meta tags são fragmentos de código HTML inseridos no <head> da página. Elas fornecem informações aos motores de busca e navegadores, como título, descrição, palavras-chave e instruções específicas. As meta tags não são visíveis para os usuários, mas são cruciais para SEO (Search Engine Optimization) e para melhorar a indexação da sua página nos motores de busca.
+
+🏷️ Principais Meta Tags e Exemplos
+Aqui estão algumas das meta tags mais comuns e suas funções:
+
+1. Meta Title (<title>)
+Descrição: Define o título que aparece na aba do navegador e nos resultados de busca.
+Recomendação: Até 60 caracteres.
+Exemplo:---------------------------------------
+
+html
+
+<title>Desenvolvedor Ruby on Rails | Paulo</title>
+2. Meta Description (<meta name="description">)
+Descrição: Resumo da página exibido nos resultados dos motores de busca.
+Recomendação: Até 160 caracteres.
+Exemplo:---------------------------------------
+
+html
+
+<meta name="description" content="Paulo, desenvolvedor Ruby on Rails com experiência em APIs, TDD, e mais. Confira meu portfólio!">
+3. Meta Keywords (<meta name="keywords">) ❗ Obsoleta para SEO, mas ainda usada em alguns contextos.
+Descrição: Lista de palavras-chave relacionadas ao conteúdo.
+Exemplo:---------------------------------------
+
+html
+
+<meta name="keywords" content="Ruby on Rails, Desenvolvimento Web, API RESTful, TDD, BDD">
+4. Meta Charset (<meta charset="UTF-8">)
+Descrição: Define a codificação de caracteres (essencial para caracteres acentuados).
+Exemplo:---------------------------------------
+
+html
+
+<meta charset="UTF-8">
+5. Meta Viewport (<meta name="viewport">)
+Descrição: Ajusta a escala da página para dispositivos móveis.
+Exemplo:---------------------------------------
+
+html
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+6. Meta Robots (<meta name="robots">)
+Descrição: Instrui os motores de busca sobre como indexar a página.
+Valores comuns:
+index, follow (padrão) — Indexar e seguir links.
+noindex, nofollow — Não indexar nem seguir links.
+Exemplo:---------------------------------------
+
+html
+
+<meta name="robots" content="index, follow">
+7. Meta Author (<meta name="author">)
+Descrição: Define o autor da página.
+Exemplo:---------------------------------------
+
+html
+
+<meta name="author" content="Paulo">
+8. Meta Social (Open Graph e Twitter Cards)
+Descrição: Otimiza a aparência da página em redes sociais.
+Open Graph (Facebook, LinkedIn):
+
+html
+
+<meta property="og:title" content="Desenvolvedor Ruby on Rails | Paulo">
+<meta property="og:description" content="Paulo, desenvolvedor Ruby on Rails com experiência em APIs, TDD, e mais.">
+<meta property="og:image" content="https://exemplo.com/imagem.png">
+<meta property="og:url" content="https://exemplo.com">
+Twitter Cards:
+
+html
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Desenvolvedor Ruby on Rails | Paulo">
+<meta name="twitter:description" content="Paulo, desenvolvedor Ruby on Rails com experiência em APIs, TDD, e mais.">
+<meta name="twitter:image" content="https://exemplo.com/imagem.png">
+📋 Resumo: Meta Tags Essenciais
+html
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desenvolvedor Ruby on Rails | Paulo</title>
+  <meta name="description" content="Paulo, desenvolvedor Ruby on Rails com experiência em APIs, TDD, e mais.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Paulo">
+  <meta property="og:title" content="Desenvolvedor Ruby on Rails | Paulo">
+  <meta property="og:description" content="Paulo, desenvolvedor Ruby on Rails com experiência em APIs, TDD, e mais.">
+  <meta property="og:image" content="https://exemplo.com/imagem.png">
+  <meta property="og:url" content="https://exemplo.com">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
