@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O que é JSX no React?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f5f5f5;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    a {
+      color: #3498db;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .code-block {
+      background-color: #ecf0f1;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: monospace;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>O que é JSX no React?</h1>
+  <p>JSX (JavaScript XML) é uma extensão de sintaxe para JavaScript usada no React. Ele permite que você escreva elementos da interface de usuário de forma semelhante ao HTML, mas com o poder do JavaScript embutido.</p>
+  
+  <h2>Exemplo 1: Renderizando um elemento simples</h2>
+  <div class="code-block">
+    <pre>
+import React from "react";
+
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Olá, mundo!&lt;/h1&gt;
+      &lt;p&gt;Bem-vindo ao mundo do React com JSX.&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+    </pre>
+  </div>
+
+  <h2>Exemplo 2: Expressões JavaScript em JSX</h2>
+  <p>JSX permite incluir expressões JavaScript diretamente, usando chaves <code>{}</code>.</p>
+  <div class="code-block">
+    <pre>
+const nome = "João";
+const idade = 25;
+
+function Saudacao() {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Olá, {nome}!&lt;/h1&gt;
+      &lt;p&gt;Você tem {idade} anos.&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+    </pre>
+  </div>
+
+  <h2>Características do JSX</h2>
+  <ul>
+    <li><strong>Expressões JavaScript</strong>: Use qualquer expressão com <code>{}</code>.</li>
+    <li><strong>Atributos</strong>: Use <code>className</code> em vez de <code>class</code>.</li>
+    <li><strong>Fragmentos</strong>: Use <code>&lt;React.Fragment&gt;</code> ou <code>&lt;&gt;...</code>.</li>
+  </ul>
+
+  <h2>Documentação</h2>
+  <p>Para saber mais, consulte as documentações oficiais:</p>
+  <ul>
+    <li><a href="https://reactjs.org/docs/introducing-jsx.html" target="_blank">Introdução ao JSX - React (em inglês)</a></li>
+    <li><a href="https://pt-br.reactjs.org/docs/introducing-jsx.html" target="_blank">Introdução ao JSX - React (em português)</a></li>
+  </ul>
+</body>
+</html>
