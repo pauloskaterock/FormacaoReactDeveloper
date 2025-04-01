@@ -1,4 +1,5 @@
 📋 Tags Estruturais
+
 <html>: Define o documento como HTML.
 <head>: Contém metadados (não visíveis).
 <title>: Título da página (aparece na aba do navegador).
@@ -12,6 +13,7 @@
 <aside>: Conteúdo complementar (barras laterais).
 <div>: Contêiner genérico para blocos.
 <span>: Contêiner genérico para linha.
+
 🖋 Tags de Formatação de Texto
 <h1> a <h6>: Títulos (h1 é o mais importante).
 <p>: Parágrafos.
@@ -25,12 +27,14 @@
 <blockquote>: Citação em bloco.
 <pre>: Texto pré-formatado.
 <code>: Código-fonte.
+
 🔗 Tags de Links e Mídia
 <a>: Links. Ex: <a href="url">Texto</a>
 <img>: Imagens. Ex: <img src="url" alt="descrição">
 <audio>: Áudio. Ex: <audio controls src="url"></audio>
 <video>: Vídeo. Ex: <video controls src="url"></video>
 <iframe>: Conteúdo embutido (como vídeos do YouTube).
+
 🗂 Tags de Listas
 <ul>: Lista não ordenada (com pontos).
 <ol>: Lista ordenada (com números).
@@ -38,6 +42,7 @@
 <dl>: Lista de definição.
 <dt>: Termo de definição.
 <dd>: Descrição do termo.
+
 🖋 Tags de Formulário
 <form>: Formulário.
 <input>: Campo de entrada.
@@ -49,6 +54,7 @@ Tipos: text, email, password, checkbox, radio, submit.
 <button>: Botão clicável.
 <fieldset>: Agrupa campos.
 <legend>: Título do <fieldset>.
+
 🛠 Tags de Tabelas
 <table>: Tabela.
 <tr>: Linha da tabela.
@@ -58,6 +64,7 @@ Tipos: text, email, password, checkbox, radio, submit.
 <tbody>: Corpo da tabela.
 <tfoot>: Rodapé da tabela.
 <caption>: Título da tabela.
+
 ⚙️ Tags de Scripts e Estilos
 <style>: CSS interno.
 <link>: CSS externo. Ex: <link rel="stylesheet" href="styles.css">
