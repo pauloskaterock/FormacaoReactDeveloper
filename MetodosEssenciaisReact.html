@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Métodos Essenciais em React</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1, h2 {
+            color: #007bff;
+        }
+        .method-item {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .method-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #28a745;
+        }
+        .code-block {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-bottom: 10px;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+        .documentation-link {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .documentation-link:hover {
+            text-decoration: underline;
+        }
+        .section-header {
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>📚 Métodos Essenciais em React: Guia Completo com Exemplos Práticos</h1>
+
+    <div class="section-header">Gerenciamento de Estado</div>
+    <div class="method-item">
+        <h2 class="method-title">1. useState - Gerenciamento de Estado Básico</h2>
+        <p><strong>O que faz:</strong> Gerencia estado em componentes funcionais.</p>
+        <div class="code-block">
+            <pre><code>import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0); // Inicializa com 0
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Você clicou {count} vezes&lt;/p&gt;
+      &lt;button onClick={() => setCount(count + 1)}&gt;
+        Incrementar
+      &lt;/button&gt;
+      &lt;button onClick={() => setCount(0)}&gt;
+        Resetar
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+            </code></pre>
+        </div>
+        <p><strong>Quando usar:</strong> Para qualquer estado local do componente que precise ser atualizado e cause re-renderização.</p>
+        <a class="documentation-link" href="https://react.dev/reference/react/useState" target="_blank">🔗 Documentação oficial do useState</a>
+        <p><strong>Exemplo Prático:</strong> Um contador simples, um formulário com campos controlados.</p>
+    </div>
+
+    <div class="method-item">
+        <h2 class="method-title">4. useReducer - Estado Complexo</h2>
+        <p><strong>O que faz:</strong> Gerencia estado complexo com lógica de atualização centralizada.</p>
+        <div class="code-block">
+            <pre><code>import React, { useReducer } from 'react';
+
+// Reducer function
+function counterReducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + 1 };
+    case 'decrement':
+      return { count: state.count - 1 };
+    case 'reset':
+      return { count: 0 };
+    default:
+      throw new Error();
+  }
+}
+
+function Counter() {
+  const [state, dispatch] = useReducer(counterReducer, { count: 0 });
+
+  return (
+    &lt;div&gt;
+      Count: {state.count}
+      &lt;button onClick={() => dispatch({ type: 'increment' })}&gt;+&lt;/button&gt;
+      &lt;button onClick={() => dispatch({ type: 'decrement' })}&gt;-&lt;/button&gt;
+      &lt;button onClick={() => dispatch({ type: 'reset' })}&gt;Reset&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+            </code></pre>
+        </div>
+        <p><strong>Quando usar:</strong> Quando a lógica de atualização do estado é complexa ou quando o próximo estado depende do anterior.</p>
+        <a class="documentation-link" href="https://react.dev/reference/react/useReducer" target="_blank">🔗 Documentação oficial do useReducer</a>
+        <p><strong>Exemplo Prático:</strong> Gerenciamento de um carrinho de compras com múltiplas ações, um formulário com validações complexas.</p>
+    </div>
+
+    <div class="section-header">Efeitos Colaterais</div>
+    <div class="method-item">
+        <h2 class="method-title">2. useEffect - Efeitos Colaterais</h2>
+        <p><strong>O que faz:</strong> Executa efeitos colaterais em componentes funcionais.</p>
+        <div class="code-block">
+            <pre><code>import React, { useState, useEffect } from 'react';
+
+function UserProfile({ userId }) {
+  const [user, setUser] = useState(null);
+
+  // Executa quando userId muda
+  useEffect(() => {
+    fetch(`/api/users/${userId}`)
+      .then(response => response.json())
+      .then(data => setUser(data));
+
+    // Função de limpeza (opcional)
+    return () => {
+      // Cancela requisições pendentes
+    };
+  }, [userId]); // Array de dependências
+
+  return &lt;div&gt;{user ? user.name : 'Carregando...'}&lt;/div&gt;;
+}
+            </code></pre>
+        </div>
+        <p><strong>Quando usar:</strong> Para chamadas API, subscriptions, manipulação manual do DOM, etc.</p>
+        <a class="documentation-link" href="https://react.dev/reference/react/useEffect" target="_blank">🔗 Documentação oficial do useEffect</a>
+        <p><strong>Exemplo Prático:</strong> Buscar dados de uma API, configurar um listener de evento global, criar um timer.</p>
+    </div>
+
+    <div class="method-item">
+        <h2 class="method-title">9. useLayoutEffect - Efeitos Síncronos</h2>
+        <p><strong>O que faz:</strong> Similar ao useEffect, mas executa sincronamente após todas as mutações do DOM.</p>
+        <div class="code-block">
+            <pre><code>import React, { useLayoutEffect, useRef, useState } from 'react';
+
+function MeasureElement() {
+  const [width, setWidth] = useState(0);
+  const ref = useRef();
+
+  useLayoutEffect(() => {
+    // Mede a largura após o DOM ser atualizado
+    setWidth(ref.current.getBoundingClientRect().width);
+  }, []);
+
+  return (
+    &lt;div ref={ref}&gt;
+      &lt;p&gt;Largura: {width}px&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+            </code></pre>
+        </div>
+        <p><strong>Quando usar:</strong> Quando você precisa ler layout do DOM e fazer mutações síncronas antes da pintura na tela.</p>
+        <a class="documentation-link" href="https://react.dev/reference/react/useLayoutEffect" target="_blank">🔗 Documentação oficial do useLayoutEffect</a>
+        <p><strong>Exemplo Prático:</strong> Medir dimensões de um elemento antes que o navegador o pinte, evitar flicker visual ao manipular o DOM.</p>
+    </div>
+
+    <div class="section-header">Otimização</div>
+    <div class="method-item">
+        <h2 class="method-title">6. useMemo - Memoização de Valores</h2>
+        <p><strong>O que faz:</strong> Memoriza valores calculados para otimização.</p>
+        <div class="code-block">
+            <pre><code>import React, { useMemo, useState } from 'react';
+
+function ExpensiveComponent({ list }) {
+  const [filter, setFilter] = useState('');
+
+  // Só recalcula quando 'list' ou 'filter' mudam
+  const filteredList = useMemo(() => {
+    return list.filter(item => item.includes(filter));
+  }, [list, filter]);
+
+  return (
+    &lt;div&gt;
+      &lt;input value={filter} onChange={(e) => setFilter(e.target.value)} /&gt;
+      &lt;ul&gt;
+        {filteredList.map(item => &lt;li key={item}&gt;{item}&lt;/li&gt;)}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+            </code></pre>
+        </div>
+        <p><strong>Quando usar:</strong> Para otimizar cálculos caros que não precisam ser refeitos em toda renderização.</p>
+        <a class="documentation-link" href="https://react.dev/reference/react/useMemo" target="_blank">🔗 Documentação oficial do useMemo</a>
+        <p><strong>Exemplo Prático:</strong> Filtrar uma lista grande, calcular um valor complexo baseado em props.</p>
+    </div>
+
+    <div class="method-item">
+        <h2 class="method-title">7. useCallback - Memoização de Funções</h2>
+        <p><strong>O que faz:</strong> Memoriza funções para evitar recriação desnecessária.</p>
+        <div class="code-block">
+            <pre><code>import React, { useState, useCallback } from 'react';
+
+function ParentComponent() {
+  const [count, setCount] = useState(0);
+
+  // Só recria a função quando 'count' muda
+  const handleClick = useCallback(() => {
+    console.log('Count:', count);
+  }, [count]);
+
+  return (
+    &lt;div&gt;
+      &lt;ChildComponent onClick={handleClick} /&gt;
+      &lt;button onClick={() => setCount(c => c + 1)}&gt;Increment&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+const ChildComponent = React.memo(({ onClick }) => {
+  console.log('Child render');
+  return &lt;button onClick={onClick}&gt;Log Count&lt;/button&gt;;
+});
+            </code></pre>
+        </div>
+        <p><strong>Quando usar:</strong> Quando passar callbacks para componentes filhos otimizados (com React.memo).</p>
+        <a class="documentation-link" href="https://react.dev/reference/react/useCallback" target="_blank">🔗 Documentação oficial do useCallback</a>
+        <p><strong>Exemplo Prático:</strong> Passar uma função como prop para um componente memoizado.</p>
+    </div>
+
+    <div class="method-item">
+        <h2 class="method-title">8. React.memo - Otimização de Componentes</h2>
+        <p><strong>O que faz:</strong> Memoriza componentes para evitar re-renderizações desnecessárias.</p>
+        <div class="code-block">
+            <pre><code>import React, { useState } from 'react';
+
+const ExpensiveComponent = React.memo(({ value }) => {
+  console.log('Componente renderizado');
+  return &lt;div&gt;{value}&lt;/div&gt;;
+});
+
+function ParentComponent() {
+  const [count, setCount] = useState(0);
+  const [value] = useState('Texto fixo');
+
+  return (
+    &lt;div&gt;
+      &lt;ExpensiveComponent value={value} /&gt;
+      &lt;button onClick={() => setCount(c => c + 1)}&gt;
+        Renderizar pai ({count})
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+            </code></pre>
+        </div>
+        <p><strong>Quando usar:</strong> Para componentes que renderizam com as mesmas props e são caros para renderizar.</p>
+        <a class="documentation-link" href="https://react.dev/reference/react/memo" target="_blank">🔗 Documentação oficial do React.memo</a>
+        <p><strong>Exemplo Prático:</strong> Exibir dados complexos que não mudam frequentemente.</p>
+    </div>
+
+    <div class="section-header">Referências</div>
+    <div class="method-item">
+        <h2 class="method-title">5. useRef - Referências Mutáveis</h2>
+        <p><strong>O que faz:</strong> Cria referências mutáveis que persistem entre re-renderizações.</p>
+        <div class="code-block">
+            <pre><code>import React, { useRef, useEffect } from 'react';
+
+function TextInputWithFocusButton() {
+  const inputEl = useRef(null);
+
+  const focusInput = () => {
+    inputEl.current.focus();
+    inputEl.current.style.backgroundColor = 'yellow';
+  };
+
+  return (
+    &lt;&gt;
+      &lt;input ref={inputEl} type="text" /&gt;
+      &lt;button onClick={focusInput}&gt;Focar no input&lt;/button&gt;
+    &lt;/&gt;
+  );
+}
+            </code></pre>
+        </div>
+        <p><strong>Quando usar:</strong> Para acessar elementos DOM diretamente ou manter valores mutáveis sem causar re-renderização.</p>
+        <a class="documentation-link" href="https://react.dev/reference/react/useRef" target="_blank">🔗 Documentação oficial do useRef</a>
+        <p><strong>Exemplo Prático:</strong> Focar em um input, acessar métodos de um componente filho imperativamente.</p>
+    </div>
+
+    <div class="method-item">
+        <h2 class="method-title">10. useImperativeHandle - Personalizar Refs</h2>
+        <p><strong>O que faz:</strong> Personaliza a instância que é exposta quando usando ref em componentes.</p>
+        <div class="code-block">
+            <pre><code>import React, { useRef, useImperativeHandle, forwardRef } from 'react';
+
+const FancyInput = forwardRef((props, ref) => {
+  const inputRef = useRef();
+
+  useImperativeHandle(ref, () => ({
+    focus: () => {
+      inputRef.current.focus();
+    },
+    shake: () => {
+      // Animação de shake
+      inputRef.current.style.animation = 'shake 0.5s';
+    }
+  }));
+
+  return &lt;input ref={inputRef} {...props} /&gt;;
+});
+
+function Parent() {
+  const inputRef = useRef();
+
+  return (
+    &lt;div&gt;
+      &lt;FancyInput ref={inputRef} /&gt;
+      &lt;button onClick={() => inputRef.current.focus()}&gt;Focus&lt;/button&gt;
+      &lt;button onClick={() => inputRef.current.shake()}&gt;Shake&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+            </code></pre>
+        </div>
+        <p><strong>Quando usar:</strong> Quando você precisa expor métodos específicos de um componente filho para o pai.</p>
+        <a class="documentation-link" href="https://react.dev/reference/react/useImperativeHandle" target="_blank">🔗 Documentação oficial do useImperativeHandle</a>
+        <p><strong>Exemplo Prático:</strong> Criar um componente de input customizado com métodos de foco e validação acessíveis pelo pai.</p>
+    </div>
+
+    <div class="section-header">Contexto</div>
+    <div class="method-item">
+        <h2 class="method-title">3. useContext - Compartilhamento de Estado Global</h2>
+        <p><strong>O que faz:</strong> Acessa o contexto sem precisar de props drilling.</p>
+        <div class="code-block">
+            <pre><code>import React, { useContext, createContext } from 'react';
+
+// 1. Criar contexto
+const ThemeContext = createContext('light');
+
+function App() {
+  return (
+    // 2. Prover valor
+    &lt;ThemeContext.Provider value="dark"&gt;
+      &lt;Toolbar /&gt;
+    &lt;/ThemeContext.Provider&gt;
+  );
+}
+
+function Toolbar() {
+  // 3. Consumir valor
+  const theme = useContext(ThemeContext);
+  return &lt;div style={{ background: theme === 'dark' ? '#333' : '#FFF' }}&gt;Tema: {theme}&lt;/div&gt;;
+}
+            </code></pre>
+        </div>
+        <p><strong>Quando usar:</strong> Para dados que precisam ser acessados por muitos componentes em diferentes níveis.</p>
+        <a class="documentation-link" href="https://react

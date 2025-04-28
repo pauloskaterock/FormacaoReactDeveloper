@@ -1,0 +1,128 @@
+Projetos Práticos em React
+1. Lista de Tarefas (To-Do List)
+Descrição: Um app para adicionar, marcar como concluída e remover tarefas.
+
+Conceitos abordados:
+
+useState
+
+Manipulação de listas
+
+Componentes funcionais
+
+Extras: Adicionar persistência com localStorage.
+
+2. Contador
+Descrição: Um contador que aumenta, diminui e reseta o valor.
+
+Conceitos abordados:
+
+useState
+
+Eventos (onClick)
+
+Extras: Adicionar um limite máximo e mínimo.
+
+3. Buscador de CEP
+Descrição: Um app que consulta uma API de CEP e exibe os dados do endereço.
+
+Conceitos abordados:
+
+useEffect
+
+Fetch API
+
+Manipulação de formulários
+
+Extras: Validar o CEP e exibir mensagens de erro.
+
+4. Gerador de Conselhos Aleatórios
+Descrição: Um app que consome a API Advice Slip e exibe conselhos aleatórios.
+
+Conceitos abordados:
+
+useEffect
+
+Fetch API
+
+Botões com interação
+
+Extras: Adicionar um botão para favoritar conselhos.
+
+5. Quiz App
+Descrição: Um app de quiz com perguntas e respostas múltiplas.
+
+Conceitos abordados:
+
+useState
+
+Renderização condicional
+
+Manipulação de arrays
+
+Extras: Adicionar um contador de pontuação.
+
+6. Lista de Compras
+Descrição: Um app para gerenciar itens de uma lista de compras.
+
+Conceitos abordados:
+
+useState
+
+Formulários
+
+Filtragem de itens
+
+Extras: Adicionar categorias para os itens.
+
+7. Relógio Digital
+Descrição: Um relógio digital que atualiza em tempo real.
+
+Conceitos abordados:
+
+useEffect
+
+setInterval
+
+Manipulação de datas com Date
+
+Extras: Adicionar um cronômetro ou temporizador.
+
+8. Galeria de Fotos
+Descrição: Um app que exibe uma galeria de fotos com opção de ampliar.
+
+Conceitos abordados:
+
+useState
+
+Manipulação de imagens
+
+CSS para modais
+
+Extras: Adicionar uma API como Unsplash para carregar fotos dinamicamente.
+
+9. Conversor de Moedas
+Descrição: Um app que converte valores entre moedas usando uma API como ExchangeRate-API.
+
+Conceitos abordados:
+
+useEffect
+
+Fetch API
+
+Formulários controlados
+
+Extras: Adicionar histórico de conversões.
+
+10. App de Clima
+Descrição: Um app que exibe a previsão do tempo com base na localização do usuário ou em uma cidade digitada.
+
+Conceitos abordados:
+
+useEffect
+
+Fetch API
+
+Geolocalização (navigator.geolocation)
+
+Extras: Adicionar ícones dinâmicos para diferentes condições climáticas.
