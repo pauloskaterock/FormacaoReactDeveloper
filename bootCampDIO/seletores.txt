@@ -1,0 +1,90 @@
+Os seletores CSS são usados para "selecionar" os elementos HTML aos quais você deseja aplicar estilos. Eles permitem estilizar elementos de acordo com critérios específicos. Aqui estão os principais tipos de seletores e como funcionam:
+
+1️⃣ Seletor Universal (*)
+Aplica o estilo a todos os elementos da página.
+
+css
+* {
+  margin: 0;
+  padding: 0;
+}
+2️⃣ Seletores de Tipo
+Seleciona todos os elementos de um determinado tipo (por exemplo, h1, p, div).
+
+css
+p {
+  color: blue;
+}
+3️⃣ Seletor de Classe (.)
+Seleciona elementos com uma classe específica. Usado quando vários elementos compartilham o mesmo estilo.
+
+html
+<div class="container">...</div>
+css
+.container {
+  width: 100%;
+  max-width: 1200px;
+}
+4️⃣ Seletor de ID (#)
+Seleciona um elemento com um ID específico. IDs devem ser únicos.
+
+html
+<div id="header">...</div>
+css
+#header {
+  background-color: black;
+  color: white;
+}
+5️⃣ Seletores Combinadores
+Descendente (): Estiliza elementos "dentro de" outros.
+
+css
+div p {
+  color: green;
+}
+Filho Direto (>): Afeta apenas filhos diretos.
+
+css
+div > p {
+  color: red;
+}
+Irmão Adjacente (+): Estiliza o elemento imediatamente após outro.
+
+css
+h1 + p {
+  font-size: 14px;
+}
+Irmãos Gerais (~): Afeta todos os elementos irmãos posteriores.
+
+css
+h1 ~ p {
+  color: gray;
+}
+6️⃣ Seletor de Atributo
+Seleciona elementos com um atributo ou valor específico.
+
+css
+input[type="text"] {
+  border: 1px solid black;
+}
+7️⃣ Seletores de Pseudo-classes
+Interação:
+
+css
+a:hover {
+  color: red;
+}
+Estados Específicos:
+
+css
+:nth-child(2) {
+  font-weight: bold;
+}
+8️⃣ Seletores de Pseudo-elementos
+Estilizam partes específicas de um elemento.
+
+css
+p::first-line {
+  font-style: italic;
+}
+Esses são os principais seletores CSS que te permitem controlar os estilos de maneira detalhada e eficiente

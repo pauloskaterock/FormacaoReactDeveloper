@@ -1,0 +1,85 @@
+O Flexbox (Flexible Box Layout) é um método de layout do CSS que facilita o alinhamento, o espaçamento e a distribuição de elementos em um contêiner, mesmo quando o tamanho dos itens é dinâmico. É ideal para layouts flexíveis e responsivos.
+
+Estrutura do Flexbox
+O modelo é composto de dois elementos principais:
+
+Contêiner flexível (flex container): O elemento pai que ativa o layout Flexbox ao usar display: flex;.
+
+Itens flexíveis (flex items): Os elementos filhos diretos dentro do contêiner.
+
+Propriedades do Contêiner
+Essas propriedades controlam como os itens são organizados:
+
+display: flex; Ativa o Flexbox no contêiner.
+
+flex-direction Define a direção principal dos itens:
+
+css
+flex-direction: row; /* (padrão) Itens em uma linha horizontal */
+flex-direction: column; /* Itens empilhados verticalmente */
+justify-content Alinha os itens na direção principal:
+
+css
+justify-content: flex-start; /* Alinha os itens à esquerda */
+justify-content: center; /* Centraliza os itens */
+justify-content: space-between; /* Espaço igual entre os itens */
+justify-content: space-around; /* Espaços iguais ao redor dos itens */
+align-items Alinha os itens na direção cruzada (perpendicular):
+
+css
+align-items: stretch; /* (padrão) Itens se expandem para preencher o contêiner */
+align-items: center; /* Centraliza os itens verticalmente */
+align-items: flex-start; /* Alinha os itens no topo */
+align-items: flex-end; /* Alinha os itens na parte inferior */
+flex-wrap Define se os itens devem ou não quebrar em várias linhas:
+
+css
+flex-wrap: nowrap; /* (padrão) Itens não quebram */
+flex-wrap: wrap; /* Itens quebram em várias linhas */
+Propriedades dos Itens
+Essas propriedades controlam o comportamento de cada item dentro do contêiner:
+
+flex-grow Define quanto espaço o item deve ocupar em relação aos outros:
+
+css
+flex-grow: 1; /* O item cresce proporcionalmente */
+flex-grow: 0; /* O item não cresce (padrão) */
+flex-shrink Define quanto um item pode encolher caso o espaço seja limitado:
+
+css
+flex-shrink: 1; /* O item pode encolher (padrão) */
+flex-shrink: 0; /* O item não encolhe */
+flex-basis Define o tamanho inicial de um item antes de ele crescer ou encolher:
+
+css
+flex-basis: 200px; /* O item começa com 200px */
+align-self Controla o alinhamento individual de um item:
+
+css
+align-self: center; /* Alinha apenas este item ao centro */
+Exemplo Prático
+html
+<div class="container">
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+</div>
+css
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid black;
+}
+Resultado
+Os itens serão organizados em uma linha, com espaço uniforme entre eles.
+
+Cada item ocupará o mesmo espaço disponível no contêiner.
+
+Flexbox é poderoso e simplifica bastante layouts complexos

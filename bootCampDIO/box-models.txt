@@ -1,0 +1,53 @@
+box model é um conceito fundamental no CSS, usado para descrever a estrutura de elementos na página e como seus tamanhos e espaçamentos são calculados. Basicamente, cada elemento é considerado uma "caixa" composta de 4 partes:
+
+1️⃣ Content (Conteúdo)
+É a área onde o conteúdo (texto, imagens, etc.) do elemento fica. Você pode controlar o tamanho dessa área com as propriedades width e height.
+
+css
+div {
+  width: 200px;
+  height: 150px;
+}
+2️⃣ Padding (Preenchimento)
+Espaço entre o conteúdo e as bordas internas da caixa. Controla o "respiro" interno do elemento. Pode ser configurado individualmente para cada lado:
+
+css
+div {
+  padding: 20px; /* Preenchimento em todos os lados */
+}
+3️⃣ Border (Borda)
+A linha ou contorno ao redor do elemento, entre o padding e o margin. Você pode definir o estilo, largura e cor da borda:
+
+css
+div {
+  border: 2px solid black; /* Borda preta sólida de 2px */
+}
+4️⃣ Margin (Margem)
+Espaço externo ao redor do elemento, usado para distanciar ele de outros elementos. Também pode ser configurado por lado:
+
+css
+div {
+  margin: 10px; /* Margem em todos os lados */
+}
+Exemplo Visual do Box Model:
++---------------------------+
+|        Margin             |  <- Espaço entre elementos
++---------------------------+
+|       Border              |  <- Linha ao redor do elemento
++---------------------------+
+|       Padding             |  <- Espaço interno, entre o conteúdo e a borda
++---------------------------+
+|       Content             |  <- Onde está o texto/imagem
++---------------------------+
+Propriedade box-sizing
+Por padrão, o width e o height no CSS afetam somente o conteúdo. Porém, com a propriedade box-sizing, você pode incluir o padding e a border nos cálculos:
+
+content-box (Padrão): O width e height afetam somente o conteúdo. O padding e a border são adicionados ao tamanho total.
+
+border-box: Inclui padding e border no tamanho total definido.
+
+css
+div {
+  box-sizing: border-box;
+}
+Compreender o box model é essencial para alinhar e dimensionar elementos corretamente na página
