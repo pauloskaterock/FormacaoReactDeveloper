@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Interativo de JavaScript</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h1, h2, h3 { color: #333; }
+        .reference { font-style: italic; color: #666; }
+        .code-block { background: #f4f4f4; padding: 10px; border-radius: 5px; font-family: monospace; white-space: pre-wrap; }
+        .menu { background: #007bff; color: white; padding: 15px; text-align: center; }
+        .menu a { color: white; text-decoration: none; margin: 10px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="menu">
+        <a href="#introducao">Introdução</a>
+        <a href="#operacoes">Operações Básicas</a>
+        <a href="#condicionais">Condicionais</a>
+        <a href="#variaveis">Tipos de Variáveis</a>
+        <a href="#repeticao">Laços de Repetição</a>
+        <a href="#arrow">Arrow Functions</a>
+        <a href="#arrays">Arrays</a>
+        <a href="#es6">Funcionalidades ES6</a>
+    </div>
+
+    <h1 id="introducao">Manual Interativo de JavaScript</h1>
+    <p>JavaScript é uma das linguagens de programação mais populares para desenvolvimento web. Este manual explora conceitos desde o básico até o avançado com exemplos práticos.</p>
+    <p class="reference">Documentação oficial: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">MDN JavaScript</a></p>
+
+    <h2 id="operacoes">1. Operações Básicas</h2>
+    <p>Operações matemáticas em JavaScript são simples e intuitivas.</p>
+    <div class="code-block">
+        // Soma
+        console.log(5 + 3); // 8
+
+        // Subtração
+        console.log(10 - 6); // 4
+
+        // Multiplicação
+        console.log(4 * 2); // 8
+
+        // Divisão
+        console.log(8 / 2); // 4
+    </div>
+    <p class="reference">Documentação oficial: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators" target="_blank">MDN Operadores Aritméticos</a></p>
+
+    <h2 id="condicionais">2. Condicionais</h2>
+    <p>Usamos condicionais para executar código com base em uma comparação.</p>
+    <div class="code-block">
+        let idade = 18;
+        if (idade >= 18) {
+            console.log("Você é maior de idade.");
+        } else {
+            console.log("Você é menor de idade.");
+        }
+    </div>
+    <p class="reference">Documentação oficial: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else" target="_blank">MDN Condicionais</a></p>
+
+    <h2 id="variaveis">3. Tipos de Variáveis</h2>
+    <p>Em JavaScript, há três formas principais de declarar variáveis.</p>
+    <div class="code-block">
+        var nome = "Alice"; // Variável global
+        let idade = 25; // Variável de escopo limitado
+        const PI = 3.14; // Constante imutável
+    </div>
+    <p class="reference">Documentação oficial: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Variables" target="_blank">MDN Variáveis</a></p>
+
+    <h2 id="repeticao">4. Laços de Repetição</h2>
+    <p>Usamos loops para repetir um bloco de código.</p>
+    <div class="code-block">
+        // Loop for
+        for (let i = 0; i < 5; i++) {
+            console.log("Número: " + i);
+        }
+
+        // Loop while
+        let contador = 0;
+        while (contador < 3) {
+            console.log("Contador: " + contador);
+            contador++;
+        }
+    </div>
+    <p class="reference">Documentação oficial: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration" target="_blank">MDN Laços de Repetição</a></p>
+
+    <h2 id="arrow">5. Arrow Functions</h2>
+    <p>Arrow functions são uma forma simplificada de escrever funções em JavaScript.</p>
+    <div class="code-block">
+        const somar = (a, b) => a + b;
+        console.log(somar(5, 3)); // 8
+    </div>
+    <p class="reference">Documentação oficial: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank">MDN Arrow Functions</a></p>
+
+    <h2 id="arrays">6. Arrays</h2>
+    <p>Arrays armazenam múltiplos valores em uma única variável.</p>
+    <div class="code-block">
+        let frutas = ["Maçã", "Banana", "Laranja"];
+        console.log(frutas[1]); // Banana
+    </div>
+    <p class="reference">Documentação oficial: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">MDN Arrays</a></p>
+
+    <h2 id="es6">7. Funcionalidades ES6</h2>
+    <p>O ES6 trouxe diversas melhorias para JavaScript.</p>
+    <div class="code-block">
+        // Template Literals
+        let nome = "Alice";
+        console.log(`Olá, ${nome}!`);
+
+        // Destructuring
+        let pessoa = { nome: "João", idade: 30 };
+        let { nome, idade } = pessoa;
+        console.log(nome, idade);
+    </div>
+    <p class="reference">Documentação oficial: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" target="_blank">MDN ES6</a></p>
+
+</body>
+</html>

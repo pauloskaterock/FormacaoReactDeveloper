@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Pseudo-classes e Media Queries no React</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h1, h2 { color: #333; }
+        .reference { font-style: italic; color: #666; }
+        .code-block { background: #f4f4f4; padding: 10px; border-radius: 5px; font-family: monospace; }
+    </style>
+</head>
+<body>
+
+    <h1>Guia de Pseudo-classes e Media Queries no React</h1>
+
+    <h2>1. Pseudo-classes no React</h2>
+    <p>Pseudo-classes permitem estilizar elementos com base em seus estados (hover, focus, active). No React, isso pode ser feito via CSS ou <strong>styled-components</strong>.</p>
+
+    <h3>Exemplo com CSS</h3>
+    <p>Crie um arquivo <strong>App.css</strong>:</p>
+    <div class="code-block">
+        <code>
+            .botao { background-color: blue; color: white; padding: 10px; border: none; cursor: pointer; } <br>
+            .botao:hover { background-color: darkblue; } <br>
+            .botao:active { background-color: red; }
+        </code>
+    </div>
+    
+    <p>E use no componente React:</p>
+    <div class="code-block">
+        <code>
+            import "./App.css"; <br>
+            function App() { <br>
+                return &lt;button className="botao"&gt;Clique aqui&lt;/button&gt;; <br>
+            }
+            export default App;
+        </code>
+    </div>
+
+    <h3>Exemplo com Styled-components</h3>
+    <div class="code-block">
+        <code>
+            import styled from "styled-components"; <br>
+            const Botao = styled.button` <br>
+                background-color: blue; color: white; padding: 10px; border: none; cursor: pointer; <br>
+                &:hover { background-color: darkblue; } <br>
+                &:active { background-color: red; } <br>
+            `; <br>
+            function App() { return &lt;Botao&gt;Clique aqui&lt;/Botao&gt;; } <br>
+            export default App;
+        </code>
+    </div>
+
+    <p class="reference">Documentação oficial: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank">MDN Pseudo-classes</a></p>
+
+    <h2>2. Media Queries no React</h2>
+    <p>Media queries ajustam o layout conforme o tamanho da tela. No React, podemos usar CSS ou styled-components.</p>
+
+    <h3>Exemplo com CSS</h3>
+    <p>Arquivo <strong>App.css</strong>:</p>
+    <div class="code-block">
+        <code>
+            .conteiner { width: 80%; margin: auto; padding: 20px; background-color: lightgray; } <br>
+            @media (max-width: 600px) { <br>
+                .conteiner { width: 100%; background-color: lightblue; } <br>
+            }
+        </code>
+    </div>
+
+    <h3>Exemplo com Styled-components</h3>
+    <div class="code-block">
+        <code>
+            import styled from "styled-components"; <br>
+            const Conteiner = styled.div` <br>
+                width: 80%; margin: auto; padding: 20px; background-color: lightgray; <br>
+                @media (max-width: 600px) { width: 100%; background-color: lightblue; } <br>
+            `; <br>
+            function App() { return &lt;Conteiner&gt;Texto responsivo&lt;/Conteiner&gt;; } <br>
+            export default App;
+        </code>
+    </div>
+
+    <h3>Exemplo com Hooks</h3>
+    <p>Para alterar o estado com base na largura da tela:</p>
+    <div class="code-block">
+        <code>
+            import { useState, useEffect } from "react"; <br>
+            function App() { <br>
+                const [telaPequena, setTelaPequena] = useState(window.innerWidth < 600); <br>
+                useEffect(() => { <br>
+                    const handleResize = () => setTelaPequena(window.innerWidth < 600); <br>
+                    window.addEventListener("resize", handleResize); <br>
+                    return () => window.removeEventListener("resize", handleResize); <br>
+                }, []); <br>
+                return &lt;div style={{ backgroundColor: telaPequena ? "lightblue" : "lightgray", padding: "20px" }}&gt; <br>
+                    {telaPequena ? "Tela Pequena" : "Tela Grande"} <br>
+                &lt;/div&gt;; <br>
+            } <br>
+            export default App;
+        </code>
+    </div>
+
+    <p class="reference">Documentação oficial: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries" target="_blank">MDN Media Queries</a></p>
+
+    <h2>Conclusão</h2>
+    <p>Com esses exemplos, você pode utilizar pseudo-classes e media queries para tornar seus componentes React mais interativos e responsivos.</p>
+
+</body>
+</html>

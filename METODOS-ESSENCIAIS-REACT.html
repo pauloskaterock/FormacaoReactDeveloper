@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Completo de React</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #61dafb;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #20232a;
+            border-bottom: 2px solid #61dafb;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        .hook-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .hook-name {
+            color: #61dafb;
+            font-size: 1.5em;
+            margin-top: 0;
+        }
+        .hook-description {
+            margin-bottom: 15px;
+        }
+        .hook-link {
+            display: inline-block;
+            background: #61dafb;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .hook-link:hover {
+            background: #4fa8d3;
+        }
+        code {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        pre {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guia Completo de Métodos React</h1>
+    
+    <div class="hook-card">
+        <h2 class="hook-name">useState</h2>
+        <p class="hook-description">Gerencia estado em componentes funcionais.</p>
+        <pre><code>const [state, setState] = useState(initialValue);</code></pre>
+        <a href="https://react.dev/reference/react/useState" class="hook-link" target="_blank">Documentação Oficial</a>
+    </div>
+
+    <div class="hook-card">
+        <h2 class="hook-name">useEffect</h2>
+        <p class="hook-description">Executa efeitos colaterais em componentes funcionais.</p>
+        <pre><code>useEffect(() => {
+  // Efeito aqui
+  return () => {
+    // Limpeza (opcional)
+  };
+}, [dependencies]);</code></pre>
+        <a href="https://react.dev/reference/react/useEffect" class="hook-link" target="_blank">Documentação Oficial</a>
+    </div>
+
+    <div class="hook-card">
+        <h2 class="hook-name">useContext</h2>
+        <p class="hook-description">Acessa o contexto sem precisar de props drilling.</p>
+        <pre><code>const value = useContext(MyContext);</code></pre>
+        <a href="https://react.dev/reference/react/useContext" class="hook-link" target="_blank">Documentação Oficial</a>
+    </div>
+
+    <div class="hook-card">
+        <h2 class="hook-name">useReducer</h2>
+        <p class="hook-description">Gerencia estado complexo com lógica de atualização centralizada.</p>
+        <pre><code>const [state, dispatch] = useReducer(reducer, initialArg, init);</code></pre>
+        <a href="https://react.dev/reference/react/useReducer" class="hook-link" target="_blank">Documentação Oficial</a>
+    </div>
+
+    <div class="hook-card">
+        <h2 class="hook-name">useRef</h2>
+        <p class="hook-description">Cria referências mutáveis que persistem entre re-renderizações.</p>
+        <pre><code>const refContainer = useRef(initialValue);</code></pre>
+        <a href="https://react.dev/reference/react/useRef" class="hook-link" target="_blank">Documentação Oficial</a>
+    </div>
+
+    <div class="hook-card">
+        <h2 class="hook-name">useMemo</h2>
+        <p class="hook-description">Memoriza valores calculados para otimização.</p>
+        <pre><code>const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);</code></pre>
+        <a href="https://react.dev/reference/react/useMemo" class="hook-link" target="_blank">Documentação Oficial</a>
+    </div>
+
+    <div class="hook-card">
+        <h2 class="hook-name">useCallback</h2>
+        <p class="hook-description">Memoriza funções para evitar recriação desnecessária.</p>
+        <pre><code>const memoizedCallback = useCallback(() => {
+  doSomething(a, b);
+}, [a, b]);</code></pre>
+        <a href="https://react.dev/reference/react/useCallback" class="hook-link" target="_blank">Documentação Oficial</a>
+    </div>
+
+    <div class="hook-card">
+        <h2 class="hook-name">React.memo</h2>
+        <p class="hook-description">Memoriza componentes para evitar re-renderizações desnecessárias.</p>
+        <pre><code>const MemoizedComponent = React.memo(Component);</code></pre>
+        <a href="https://react.dev/reference/react/memo" class="hook-link" target="_blank">Documentação Oficial</a>
+    </div>
+
+    <div class="hook-card">
+        <h2 class="hook-name">useLayoutEffect</h2>
+        <p class="hook-description">Similar ao useEffect, mas executa sincronamente após todas as mutações do DOM.</p>
+        <pre><code>useLayoutEffect(() => {
+  // Código aqui
+}, [dependencies]);</code></pre>
+        <a href="https://react.dev/reference/react/useLayoutEffect" class="hook-link" target="_blank">Documentação Oficial</a>
+    </div>
+
+    <div class="hook-card">
+        <h2 class="hook-name">useImperativeHandle</h2>
+        <p class="hook-description">Personaliza a instância que é exposta quando usando ref em componentes.</p>
+        <pre><code>useImperativeHandle(ref, () => {
+  return {
+    focus() {
+      inputRef.current.focus();
+    }
+  };
+}, []);</code></pre>
+        <a href="https://react.dev/reference/react/useImperativeHandle" class="hook-link" target="_blank">Documentação Oficial</a>
+    </div>
+
+    <div class="hook-card">
+        <h2 class="hook-name">useDebugValue</h2>
+        <p class="hook-description">Exibe labels para hooks customizados no React DevTools.</p>
+        <pre><code>useDebugValue(isOnline ? 'Online' : 'Offline');</code></pre>
+        <a href="https://react.dev/reference/react/useDebugValue" class="hook-link" target="_blank">Documentação Oficial</a>
+    </div>
+
+    <div class="hook-card">
+        <h2 class="hook-name">useTransition</h2>
+        <p class="hook-description">Permite marcar atualizações de estado como não urgentes.</p>
+        <pre><code>const [isPending, startTransition] = useTransition();</code></pre>
+        <a href="https://react.dev/reference/react/useTransition" class="hook-link" target="_blank">Documentação Oficial</a>
+    </div>
+
+    <div class="hook-card">
+        <h2 class="hook-name">useDeferredValue</h2>
+        <p class="hook-description">Diferi a atualização de uma parte da UI.</p>
+        <pre><code>const deferredValue = useDeferredValue(value);</code></pre>
+        <a href="https://react.dev/reference/react/useDeferredValue" class="hook-link" target="_blank">Documentação Oficial</a>
+    </div>
+
+    <div class="hook-card">
+        <h2 class="hook-name">useId</h2>
+        <p class="hook-description">Gera IDs únicos estáveis entre server e client.</p>
+        <pre><code>const id = useId();</code></pre>
+        <a href="https://react.dev/reference/react/useId" class="hook-link" target="_blank">Documentação Oficial</a>
+    </div>
+
+    <div class="hook-card">
+        <
