@@ -1,7 +1,9 @@
 // src/components/TaskList.js
 import React, { useState } from 'react';
 import Task from './Task';
-import './styles.css';
+// import './styles.css';
+import '../styles.css';
+
 
 function TaskList() {
   // 1. Estado para armazenar a lista de tarefas
